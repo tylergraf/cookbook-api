@@ -2,20 +2,22 @@ const express = require('express');
 const router = express.Router();
 const tracker = require('../lib/tracker.js');
 const track = require('../lib/track.js');
+const verifyAuth = require('./middleware/verifyAuth.js');
+const findOrCreateUser = require('./middleware/findOrCreateUser.js');
 
 
-router.post('/tracker', tracker.create);
-router.put('/tracker/:id', tracker.update);
-router.delete('/tracker/:id', tracker.remove);
-router.get('/tracker/:id', tracker.get);
-router.get('/trackers', tracker.list);
+router.post('/tracker', verifyAuth, findOrCreateUser, tracker.create);
+router.put('/tracker/:id', verifyAuth, findOrCreateUser, tracker.update);
+router.delete('/tracker/:id', verifyAuth, findOrCreateUser, tracker.remove);
+router.get('/tracker/:id', verifyAuth, findOrCreateUser, tracker.get);
+router.get('/trackers', verifyAuth, findOrCreateUser, tracker.list);
 
 
-router.post('/track', track.create);
-router.put('/track/:id', track.update);
-router.delete('/track/:id', track.remove);
-router.get('/track/:id', track.get);
-router.get('/tracks/:trackerId', track.list);
+router.post('/track', verifyAuth, findOrCreateUser, track.create);
+router.put('/track/:id', verifyAuth, findOrCreateUser, track.update);
+router.delete('/track/:id', verifyAuth, findOrCreateUser, track.remove);
+router.get('/track/:id', verifyAuth, findOrCreateUser, track.get);
+router.get('/tracks/:trackerId', verifyAuth, findOrCreateUser, track.list);
 
 
 module.exports = router;

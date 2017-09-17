@@ -12,8 +12,8 @@ require('dotenv').config()
 
 mongoose.Promise = global.Promise;
 
-// mongoose.connect('mongodb://localhost/tracker', {useMongoClient: true})
-mongoose.connect(`${process.env.MONGO_STITCH_URL}`, {useMongoClient: true})
+mongoose.connect('mongodb://localhost/tracker', {useMongoClient: true})
+// mongoose.connect(`${process.env.MONGO_STITCH_URL}`, {useMongoClient: true})
   .then((db)=>{
     console.log('Connected to mongodb');
   })
