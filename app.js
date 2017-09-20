@@ -11,7 +11,7 @@ const api = require('./routes/api');
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-
+console.log(process.env.MONGO_STITCH_URL);
 // mongoose.connect('mongodb://localhost/tracker', {useMongoClient: true})
 mongoose.connect(`${process.env.MONGO_STITCH_URL}`, {useMongoClient: true})
   .then((db)=>{
