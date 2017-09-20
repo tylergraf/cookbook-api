@@ -11,9 +11,9 @@ const api = require('./routes/api');
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-console.log(process.env.MONGO_STITCH_URL);
+
 // mongoose.connect('mongodb://localhost/tracker', {useMongoClient: true})
-mongoose.connect(`${process.env.MONGO_STITCH_URL}`, {useMongoClient: true})
+mongoose.connect(`mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}${process.env.MONGO_STITCH_URL}`, {useMongoClient: true})
   .then((db)=>{
     console.log('Connected to mongodb');
   })
