@@ -13,6 +13,7 @@ router.get("/recipe/:id", r.get, function(req, res, next) {
 router.post("/recipes/move", r.move, function(req, res, next) {
   res.json(204);
 });
+router.post("/recipe/new", r.create);
 // router.delete("/subcategory/:subcategoryId", r.deleteSu, function(req, res, next) {
 //   res.json(204);
 // });
@@ -20,5 +21,7 @@ router.post("/recipes/move", r.move, function(req, res, next) {
 router.get("/search/:searchTerm", r.search, function(req, res, next) {
   res.json(req.recipes);
 });
+
+router.put("/updateCounts", r.updateRecipeCounts);
 
 module.exports = router;

@@ -8,7 +8,8 @@ var subcategorySchema = new Schema({
     name: String,
     _category: {type: ObjectId, ref: 'Categories'},
     slug: String,
-    id: ObjectId
+    id: ObjectId,
+    recipeCount: {type: Number, default: 0}
 });
 
 

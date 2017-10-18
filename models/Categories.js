@@ -7,7 +7,8 @@ var categorySchema = new Schema({
     updated: {type: Date, default: Date.now},
     name: String,
     slug: String,
-    id: ObjectId
+    id: ObjectId,
+    recipeCount: {type: Number, default: 0}
 });
 
 
