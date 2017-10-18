@@ -1,13 +1,13 @@
 const s = require('../lib/subcategories.js');
+const r = require('../lib/recipes.js');
 const express = require('express');
 const router = express.Router();
 const verifyAuth = require('./middleware/verifyAuth.js');
 const findOrCreateUser = require('./middleware/findOrCreateUser.js');
 
 
-router.get("/subcategories/:categoryId", s.list, function(req, res, next) {
-  res.json({subcategories: req.subcategories, category: req.category});
-});
+router.get("/subcategories/:categoryId", s.list);
+router.get("/subcategory/:subcategoryId", r.list);
 router.post("/subcategory/new", s.newSubcategory, function(req, res, next) {
   res.json(req.newSubcategory);
 });
