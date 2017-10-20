@@ -6,6 +6,7 @@ const verifyAuth = require('./middleware/verifyAuth.js');
 const findOrCreateUser = require('./middleware/findOrCreateUser.js');
 
 
+router.get("/subcategories", s.all);
 router.get("/subcategories/:categoryId", s.list);
 router.get("/subcategory/:subcategoryId", r.list);
 router.post("/subcategory/new", s.newSubcategory, function(req, res, next) {
