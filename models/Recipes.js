@@ -8,7 +8,9 @@ var recipesSchema = new Schema({
     title: String,
     subtitle: String,
     ingredients: String,
+    md_ingredients: String,
     directions: String,
+    md_directions: String,
     _subcategory:  {type: ObjectId, ref: 'Subcategories'},
     id: ObjectId
 });
