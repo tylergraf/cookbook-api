@@ -8,7 +8,7 @@ const findOrCreateUser = require('./middleware/findOrCreateUser.js');
 
 router.get("/subcategories", s.all);
 router.get("/subcategories/:categoryId", s.list);
-router.get("/subcategory/:subcategoryId", r.list);
+router.get("/subcategory/:subcategoryId", s.get);
 router.post("/subcategory/new", s.newSubcategory, function(req, res, next) {
   res.json(req.newSubcategory);
 });
