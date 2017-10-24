@@ -18,9 +18,7 @@ router.post("/recipe/new", r.create);
 //   res.json(204);
 // });
 
-router.get("/search/:searchTerm", r.search, function(req, res, next) {
-  res.json(req.recipes);
-});
+router.get(["/search","/search/:searchTerm"], r.search);
 
 router.put("/updateCounts", r.updateRecipeCounts);
 

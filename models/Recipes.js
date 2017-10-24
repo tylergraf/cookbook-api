@@ -15,4 +15,6 @@ var recipesSchema = new Schema({
     id: ObjectId
 });
 
+recipesSchema.index({title: 'text', 'subtitle': 'text', md_ingredients: 'text', md_directions: 'text'});
+
 module.exports = mongoose.model('Recipes', recipesSchema);
