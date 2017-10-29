@@ -19,7 +19,7 @@ router.post("/recipe/new", r.create);
 // });
 
 router.get(["/search","/search/:searchTerm"], r.search);
-
+router.get("/popular", r.popular);
 router.put("/updateCounts", r.updateRecipeCounts);
 
 module.exports = router;
