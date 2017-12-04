@@ -1,8 +1,6 @@
 const r = require('../lib/recipes.js');
 const express = require('express');
 const router = express.Router();
-const verifyAuth = require('./middleware/verifyAuth.js');
-const findOrCreateUser = require('./middleware/findOrCreateUser.js');
 
 router.get("/recipes/:subcategoryId", r.list, function(req, res, next) {
   res.json({recipes: req.recipes, subcategory: req.subcategory});

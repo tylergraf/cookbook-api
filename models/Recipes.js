@@ -13,7 +13,9 @@ var recipesSchema = new Schema({
     md_directions: String,
     _subcategory:  {type: ObjectId, ref: 'Subcategories'},
     id: ObjectId,
-    views: {type: Number, default: 0}
+    views: {type: Number, default: 0},
+    favorites: {type: Number, default: 0},
+    favorited: {type: Boolean, default: false}
 });
 
 recipesSchema.index({title: 'text', 'subtitle': 'text', md_ingredients: 'text', md_directions: 'text'});

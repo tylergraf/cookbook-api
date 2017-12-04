@@ -8,7 +8,8 @@ const favorites = require('./favorites.js');
 const recipes = require('./recipes.js');
 const views = require('./views.js');
 
-// router.all(verifyAuth, findOrCreateUser);
+router.use(verifyAuth);
+router.use(findOrCreateUser);
 router.use(categories);
 router.use(subcategories);
 router.use(favorites);

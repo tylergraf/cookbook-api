@@ -1,7 +1,10 @@
 const User = require("../../models/User.js");
 
 module.exports = function(req, res, next){
-
+  if(!req.uid){
+    req.user = {}
+    return next();
+  }
   User.findOne({uid: req.uid})
     .then(user=>{
       if(!user){
@@ -15,7 +18,7 @@ module.exports = function(req, res, next){
       next();
     })
     .catch(err=>{
-      console.log(err);
+      console.log('err',err);
       res.status(500).end();
     });
 }

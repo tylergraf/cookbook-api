@@ -23,7 +23,7 @@ module.exports = function(req, res, next){
   const idToken = authHeader && authHeader.split('Bearer ')[1];
 
   if(!authHeader || !idToken){
-    return res.status(401).end();
+    return next();
   }
 
   admin.auth().verifyIdToken(idToken)
