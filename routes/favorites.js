@@ -5,9 +5,7 @@ const router = express.Router();
 router.get("/favorite/:recipeId", f.getFavorite, function(req, res, next) {
   res.json(req.favorite);
 });
-router.get("/favorites", f.list, function(req, res, next) {
-  res.json(req.favorites);
-});
+router.get("/favorites", f.list);
 router.post("/favorite/:recipeId", f.newFavorite, function(req, res, next) {
   res.json(req.newFavorite);
 });
