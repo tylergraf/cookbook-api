@@ -7,6 +7,7 @@ const subcategories = require('./subcategories.js');
 const favorites = require('./favorites.js');
 const recipes = require('./recipes.js');
 const views = require('./views.js');
+const notes = require('./notes.js');
 
 router.use(verifyAuth);
 router.use(findOrCreateUser);
@@ -15,5 +16,6 @@ router.use(subcategories);
 router.use(favorites);
 router.use(recipes);
 router.use(views);
+router.use(notes);
 
 module.exports = router;
