@@ -12,6 +12,7 @@ var recipesSchema = new Schema({
     directions: String,
     md_directions: String,
     _subcategory:  {type: ObjectId, ref: 'Subcategories'},
+    _user:  {type: ObjectId, ref: 'User'},
     id: ObjectId,
     views: {type: Number, default: 0},
     favorites: {type: Number, default: 0},

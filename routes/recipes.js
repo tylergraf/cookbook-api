@@ -5,6 +5,7 @@ const router = express.Router();
 router.get("/recipes/:subcategoryId", r.list, function(req, res, next) {
   res.json({recipes: req.recipes, subcategory: req.subcategory});
 });
+router.get("/user/recipes/:uid", r.userRecipes);
 router.get("/recipe/:id", r.get);
 router.put("/recipe/:id", r.update);
 router.delete("/recipe/:id", r.delete);
