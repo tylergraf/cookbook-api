@@ -8,6 +8,7 @@ const favorites = require('./favorites.js');
 const recipes = require('./recipes.js');
 const views = require('./views.js');
 const notes = require('./notes.js');
+const collections = require('./collections.js');
 
 router.use(verifyAuth);
 router.use(findOrCreateUser);
@@ -17,5 +18,6 @@ router.use(favorites);
 router.use(recipes);
 router.use(views);
 router.use(notes);
+router.use(collections);
 
 module.exports = router;

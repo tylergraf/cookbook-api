@@ -17,7 +17,8 @@ var recipesSchema = new Schema({
     views: {type: Number, default: 0},
     favorites: {type: Number, default: 0},
     favorited: {type: Boolean, default: false},
-    note: String
+    note: String,
+    image: String
 });
 
 recipesSchema.index({title: 'text', 'subtitle': 'text', md_ingredients: 'text', md_directions: 'text'});
