@@ -8,7 +8,8 @@ const userSchema = new Schema({
   picture: String,
   email: String,
   email_verified: Boolean,
-  uid: String
+  uid: String,
+  admin: { type: Boolean, default: false },
 });
 
 module.exports = mongoose.model('User', userSchema);
