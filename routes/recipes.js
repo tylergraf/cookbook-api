@@ -2,6 +2,9 @@ const r = require('../lib/recipes.js');
 const express = require('express');
 const router = express.Router();
 
+router.get("/recipes/all", r.all, function(req, res, next) {
+  res.json(req.recipes);
+});
 router.get("/recipes/:subcategoryId", r.list, function(req, res, next) {
   res.json({recipes: req.recipes, subcategory: req.subcategory});
 });
