@@ -24,6 +24,7 @@ mongoose.connect(`mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PA
   });
 
 const app = express();
+app.options('*', cors())
 app.use(cors())
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -58,8 +59,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// setInterval(function() {
-//   http.get("https://gretchenscookbook-api.herokuapp.com/");
-// }, 300000); // every 5 minutes (300000)
+setInterval(function() {
+  http.get("https://gretchenscookbook-api.herokuapp.com/");
+}, 300000); // every 5 minutes (300000)
 
 module.exports = app;
