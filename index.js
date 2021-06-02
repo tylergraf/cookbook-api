@@ -4,7 +4,7 @@
 
 var app = require('./app');
 var debug = require('debug')('tracker-api:server');
-var http = require('http');
+var https = require('https');
 
 require('dotenv').config()
 
@@ -19,7 +19,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = https.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
