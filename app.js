@@ -5,7 +5,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const http = require("http");
+const https = require("https");
 
 const index = require('./routes/index');
 const api = require('./routes/api');
@@ -60,7 +60,7 @@ app.use(function(err, req, res, next) {
 });
 
 setInterval(function() {
-  http.get("https://gretchenscookbook-api.herokuapp.com/");
+  https.get("https://gretchenscookbook-api.herokuapp.com/");
 }, 300000); // every 5 minutes (300000)
 
 module.exports = app;
